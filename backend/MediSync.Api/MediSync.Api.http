@@ -1,0 +1,30 @@
+@MediSync.Api_HostAddress = http://localhost:5054
+
+GET {{MediSync.Api_HostAddress}}/api/health
+Accept: application/json
+
+### Login as Admin
+POST {{MediSync.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@medisync.local",
+  "password": "Admin@123"
+}
+
+### Register a new Patient
+POST {{MediSync.Api_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Test Patient",
+  "email": "newpatient@medisync.local",
+  "password": "Patient@123",
+  "phoneNumber": "+1-555-0399",
+  "gender": "Female",
+  "bloodGroup": "A+"
+}
+
+### Get Current User Profile (replace <JWT_TOKEN>)
+GET {{MediSync.Api_HostAddress}}/api/auth/me
+Authorization: Bearer <JWT_TOKEN>

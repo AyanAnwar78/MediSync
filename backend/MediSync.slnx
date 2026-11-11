@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MediSync.Api/MediSync.Api.csproj" />
+  <Project Path="MediSync.Tests/MediSync.Tests.csproj" />
+</Solution>
